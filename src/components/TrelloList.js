@@ -10,11 +10,13 @@ const styles = {
   }
 };
 
-const TrelloList = ({ title }) => {
+const TrelloList = ({ title, cards }) => {
   return (
     <div style={styles.container}>
       <h4>{title}</h4>
-      <TrelloCard />
+      {cards.map(card => (
+        <TrelloCard text={card.text} />
+      ))}
     </div>
   );
 };
